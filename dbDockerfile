@@ -1,0 +1,9 @@
+FROM mysql:8.0
+
+# Development DB settings
+ENV MYSQL_USER=user \
+    MYSQL_PASSWORD=userpasswd \
+    MYSQL_ROOT_PASSWORD=root
+
+# Copy init script (runs on first container start)
+COPY init.sql /docker-entrypoint-initdb.d/
