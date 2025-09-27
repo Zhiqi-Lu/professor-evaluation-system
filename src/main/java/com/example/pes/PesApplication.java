@@ -21,7 +21,8 @@ import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
 @SpringBootApplication(scanBasePackages = "com.example")
 //使用注解驱动缓存机制
 @EnableCaching
-@MapperScan(basePackages = "com.example", annotationClass = Mapper.class)
+//@MapperScan(basePackages = "com.example", annotationClass = Mapper.class)
+@MapperScan("com.example.dao")  // 只写包名即可
 public class PesApplication extends WebSecurityConfigurerAdapter {
 
 	// 注入数据源

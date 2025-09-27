@@ -9,7 +9,7 @@ DROP TABLE IF EXISTS Course;
 DROP TABLE IF EXISTS Administrator;
 DROP TABLE IF EXISTS Student;
 
-CREATE TABLE Student (
+CREATE TABLE student (
     Sno VARCHAR(10) NOT NULL PRIMARY KEY,
     Sname VARCHAR(10) NOT NULL,
     Snickname VARCHAR(20) NOT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE Student (
     UNIQUE (Sno)
 );
 
-CREATE TABLE Administrator (
+CREATE TABLE administrator (
     Ano VARCHAR(10) NOT NULL PRIMARY KEY,
     Amail VARCHAR(30) NOT NULL UNIQUE,
     Anickname VARCHAR(20) NOT NULL UNIQUE,
@@ -31,7 +31,7 @@ CREATE TABLE Administrator (
     UNIQUE (Ano)
 );
 
-CREATE TABLE Course (
+CREATE TABLE course (
     Cno VARCHAR(10) NOT NULL PRIMARY KEY,
     Cname VARCHAR(20) NOT NULL UNIQUE,
     Cterm INT NOT NULL CHECK (Cterm BETWEEN 1 AND 8),
@@ -40,7 +40,7 @@ CREATE TABLE Course (
     UNIQUE (Cno)
 );
 
-CREATE TABLE Professor (
+CREATE TABLE professor (
     Pno VARCHAR(10) NOT NULL PRIMARY KEY,
     Pname VARCHAR(10) NOT NULL,
     Ppos VARCHAR(10) NOT NULL,
@@ -49,7 +49,7 @@ CREATE TABLE Professor (
     UNIQUE (Pno)
 );
 
-CREATE TABLE Review (
+CREATE TABLE review (
     id_review INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     Sno VARCHAR(10) NOT NULL,
     Pno VARCHAR(10) NOT NULL,
@@ -63,33 +63,33 @@ CREATE TABLE Review (
     upvote INT NOT NULL DEFAULT 0
 );
 
-CREATE TABLE PCR (
+CREATE TABLE pcr (
     Pno VARCHAR(10) NOT NULL,
     Cno VARCHAR(10) NOT NULL,
     PRIMARY KEY (Pno, Cno)
 );
 
-CREATE TABLE SCR (
+CREATE TABLE scr (
     Sno VARCHAR(10) NOT NULL,
     Cno VARCHAR(10) NOT NULL,
     PRIMARY KEY (Sno, Cno)
 );
 
-INSERT INTO Student (Sno, Sname, Snickname, Spw, Syear, Sgender, Smail, Svalid, Sstate)
+INSERT INTO student (Sno, Sname, Snickname, Spw, Syear, Sgender, Smail, Svalid, Sstate)
 VALUES
 ('S001', 'Alice', 'Ali', 'passwd', 2019, 'F', 'alice@example.com', '2025-12-31', NULL),
 ('S002', 'Bob', 'Bobby', 'passwd', 2020, 'M', 'bob@example.com', '2025-12-31', NULL);
 
-INSERT INTO Administrator (Ano, Amail, Anickname, Apw, Aprivilege)
+INSERT INTO administrator (Ano, Amail, Anickname, Apw, Aprivilege)
 VALUES
 ('A001', 'admin1@example.com', 'root1', 'adminpass', 1);
 
-INSERT INTO Course (Cno, Cname, Cterm, Ccredit, Cdept)
+INSERT INTO course (Cno, Cname, Cterm, Ccredit, Cdept)
 VALUES
 ('C001', 'Database Systems', 3, 4, 'Computer Science'),
 ('C002', 'Operating Systems', 4, 5, 'Computer Science');
 
-INSERT INTO Professor (Pno, Pname, Ppos, Pinfo, Pdept)
+INSERT INTO professor (Pno, Pname, Ppos, Pinfo, Pdept)
 VALUES
 ('P001', 'Dr. Zhang', 'professor', 'Expert in databases', 'Computer Science'),
 ('P002', 'Dr. Li', 'professor', 'Specialist in operating systems', 'Computer Science');
