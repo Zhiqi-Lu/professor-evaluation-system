@@ -78,7 +78,11 @@ CREATE TABLE scr (
 INSERT INTO student (Sno, Sname, Snickname, Spw, Syear, Sgender, Smail, Svalid, Sstate)
 VALUES
 ('S001', 'Alice', 'Ali', 'passwd', 2019, 'F', 'alice@example.com', '2025-12-31', NULL),
-('S002', 'Bob', 'Bobby', 'passwd', 2020, 'M', 'bob@example.com', '2025-12-31', NULL);
+('S002', 'Bob', 'Bobby', 'passwd', 2020, 'M', 'bob@example.com', '2025-12-31', NULL),
+('S003', 'Charlie', 'Char', 'passwd', 2020, 'M', 'charlie@example.com', '2025-12-31', NULL),
+('S004', 'Diana', 'Di', 'passwd', 2022, 'F', 'diana@example.com', '2025-12-31', NULL),
+('S005', 'Ethan', 'E', 'passwd', 2019, 'M', 'ethan@example.com', '2025-12-31', NULL),
+('S006', 'Fiona', 'Fi', 'passwd', 2021, 'F', 'fiona@example.com', '2025-12-31', NULL)
 
 INSERT INTO administrator (Ano, Amail, Anickname, Apw, Aprivilege)
 VALUES
@@ -88,6 +92,7 @@ INSERT INTO course (Cno, Cname, Cterm, Ccredit, Cdept)
 VALUES
 ('C001', 'Database Systems', 3, 4, 'Computer Science'),
 ('C002', 'Operating Systems', 4, 5, 'Computer Science');
+('C003', 'Computer Network', 4, 5, 'Computer Science');
 
 INSERT INTO professor (Pno, Pname, Ppos, Pinfo, Pdept)
 VALUES
