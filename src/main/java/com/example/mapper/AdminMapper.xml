@@ -5,7 +5,7 @@
 <mapper namespace="com.example.dao.AdminDao">
 
     <select id="getAdmin" parameterType="String" resultType="Administrator">
-        SELECT * FROM Administrator where (Ano=#{ano})
+        SELECT * FROM administrator where (Ano=#{ano})
     </select>
 
 </mapper>
