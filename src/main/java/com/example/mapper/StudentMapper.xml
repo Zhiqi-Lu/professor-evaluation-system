@@ -13,32 +13,32 @@
     </select>
   
     <update id="updatesnickname" parameterType="String" >
-     UPDATE Student
+     UPDATE student
         SET Snickname=#{Snickname}
         WHERE ( Sno=#{Sno})
     </update>
     
     <update id="updatestate"  >
-     UPDATE Student
+     UPDATE student
         SET Sstate=#{Sstate}
         WHERE ( Sno=#{Sno})
     </update>
     
      <update id="updatespw" parameterType="String" >
-     UPDATE Student
+     UPDATE student
         SET Spw=#{Spw}
         WHERE ( Sno=#{Sno})
     </update>
     
     <insert id="saveStu"  parameterType="student">
      INSERT 
-        INTO Student(Sno,Sname,Snickname,Spw,Syear,Sgender,Smail,Svalid,Sstate)
+        INTO student(Sno,Sname,Snickname,Spw,Syear,Sgender,Smail,Svalid,Sstate)
         VALUES(#{sno},#{sname},#{snickname},#{spw},#{syear},#{sgender},#{smail},#{svalid},#{sstate});
     </insert>
     
     <delete id="deleteStu" parameterType="String">
      DELETE 
-        FROM Student 
+        FROM student
         WHERE Sno=#{Sno};
     </delete>
 </mapper>

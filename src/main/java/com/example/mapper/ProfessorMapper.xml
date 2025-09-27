@@ -36,7 +36,7 @@
     
     <delete id="deletePrf" parameterType="String">
      DELETE 
-        FROM Professor 
+        FROM professor
         WHERE Pno=#{Pno};
     </delete>
 </mapper>

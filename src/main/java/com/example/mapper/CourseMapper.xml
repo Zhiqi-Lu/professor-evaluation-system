@@ -22,30 +22,30 @@
    
    <insert id="savecourse" parameterType="Course">
    INSERT 
-    INTO Course(Cno,Cname,Cterm,Ccredit,Cdept)
+    INTO course(Cno,Cname,Cterm,Ccredit,Cdept)
     VALUES(#{cno},#{cname},#{cterm},#{ccredit},#{cdept});
    </insert>
    
    <delete id="deletecourse" parameterType="String"> 
    DELETE
-    FROM Course
+    FROM course
     WHERE Cno=#{cno};
    </delete>
    
    <update id="updatecname">
-   UPDATE Course
+   UPDATE course
         SET Cname=#{cname}
         WHERE Cno=#{cno};
    </update>
    
    <update id="updatecterm">
-   UPDATE Course
+   UPDATE course
         SET Cterm=#{cterm}
         WHERE Cno=#{cno};
    </update>
    
    <update id="updatecredit">
-   UPDATE Course
+   UPDATE course
         SET Ccredit=#{ccredit}
         WHERE Cno=#{cno};
    </update>
