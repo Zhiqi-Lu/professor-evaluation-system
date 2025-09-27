@@ -1,0 +1,67 @@
+/* css鏂囦欢娉ㄩ噴鐨勫揩鎹烽敭鏄痗trl+/ */
+body{
+	background-image: url(/img/bgimg.jpg);        /* 背景图片 */
+    background-repeat: no-repeat;        /* 背景图片不重复 */
+	margin: 0;
+	padding: 0;
+	
+}
+.signup-form{
+	width: 300px;
+	padding: 5px;
+	text-align: center;
+	background: url(../img/7QXqOeNNvY.png);
+	/* 杩欐槸灏嗚〃鏍煎～鍏呬竴涓儗鏅浘 */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	overflow: hidden;
+}
+.signup-form h1{
+	margin-top: 100px;
+	font-family: 'Permanent Marker',cursive;
+	color:#fff;
+	font-size: 40px;
+}
+.signup-form input{
+	display: block;
+	width: 100%;
+	padding:0 16px;
+	height:44px;
+	text-align: center;
+	box-sizing: border-box;
+	outline:none;
+	border:none;
+	font-family:"montserrat",sans-serif;
+}
+.txtb{
+	margin: 20px,0;
+	background: rgb(255,255,255,.5);
+	/*涓婇潰鐨勬槸閫忔槑鑹�*/
+	border-radius: 6px;
+}
+.signup-btn{
+	margin-top: 60px;
+	margin-bottom:20px ;
+	background:#00587a;
+	color: #191919;
+	border-radius: 44px;
+	cursor: pointer;
+	transition: 0.8s;
+}
+.signip-btn:hover{
+	transform: scale(0.96);
+}
+.signup-form a{
+	text-decoration: none;
+	color:#fff;
+	font-family: "montserrat",sans-serif;
+	font-size:14px;
+	padding: 10px;
+	transition: 0.8s;
+	display: block;
+}
+.signup-form a:hover{
+	background:rgba(0,0,0,.3);
+}

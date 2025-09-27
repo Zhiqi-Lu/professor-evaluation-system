@@ -14,7 +14,7 @@ CREATE TABLE student (
     Sname VARCHAR(10) NOT NULL,
     Snickname VARCHAR(20) NOT NULL,
     Spw VARCHAR(20) NOT NULL,
-    Syear YEAR NOT NULL CHECK (Syear BETWEEN 1964 AND 2025),
+    Syear YEAR NOT NULL,
     Sgender VARCHAR(2),
     Smail VARCHAR(30) NOT NULL UNIQUE,
     Svalid DATE NOT NULL,
@@ -34,8 +34,8 @@ CREATE TABLE administrator (
 CREATE TABLE course (
     Cno VARCHAR(10) NOT NULL PRIMARY KEY,
     Cname VARCHAR(20) NOT NULL UNIQUE,
-    Cterm INT NOT NULL CHECK (Cterm BETWEEN 1 AND 8),
-    Ccredit INT NOT NULL CHECK (Ccredit > 0 AND Ccredit <= 6),
+    Cterm INT NOT NULL,
+    Ccredit INT NOT NULL,
     Cdept VARCHAR(20) NOT NULL,
     UNIQUE (Cno)
 );

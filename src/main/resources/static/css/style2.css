@@ -1,0 +1,217 @@
+body
+{
+	margin:0;
+	padding: 0;
+	background-color: #f4f4f2;
+}
+*
+{
+	margin: 0;
+	padding:0;
+}
+.outer
+{
+	margin: 0 auto;
+	width :600px;
+	height:50px;
+	position:absolute;
+	left:420px;
+	background-color:#e8e8e8;
+}
+ul{
+	list-style-type: none;
+	width:100%;
+	height:100%;
+}
+ul::after,u1::before
+{
+	content:"";
+	display:block;
+	clear:both;
+}
+li
+{
+	width:180px;
+	height:100%;
+	line-height: 50px;
+	cursor:pointer;
+	float:left;
+	text-align: center;
+}
+.search-box{
+	position: absolute;
+	top:16%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	/* 杩欓噷鏄姩鎬佹悳绱㈡鐨勮儗鏅鑹?*/
+	background: #bbbfca;
+	height: 40px;
+	border-radius: 40px;
+	padding: 10px;
+}
+.search-box:hover > .search-txt{
+	width:500px;
+	padding: 0 6px;
+}
+.search-box:hover > .search-btn{
+	background: white;
+}
+.search-btn{
+	color: #411F1A;
+	float: right;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: #bbbfca;
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	transition: 0.4s;
+}
+.search-txt{
+	border: none;
+	background: none;
+	outline: none;
+	float: left;
+	padding: 0;
+	color: white;
+	font-size: 16px;
+	transition:0.4s;
+	line-height: 40px;
+	width: 0px;
+}
+
+.pic{
+  font-size:20px;
+  margin-right:20px;
+  float:right;
+  }
+  .pic:hover{
+	  color: #ec524b;
+  }
+.btm
+{
+	width:180px;
+	height: 5px;
+	position:absolute;
+	left: 0px;
+	background-color:#495464;
+	transition: 0.5s;
+}
+.side_div
+{
+	float:left;
+	position:absolute;
+	top:79%;
+	left:0%px;
+	color: #F7F7F7;
+	background-color: #e8e8e8;
+	font-size:30px;
+	width: 280px;
+	height: 550px;
+}
+.side_div1 
+{
+	float: right;
+	position:absolute;
+	top:79%;
+	left:78.5%;
+	color: #F7F7F7;
+	background-color: #e8e8e8;
+	font-size:30px;
+	width: 280px;
+	height: 550px;
+}
+.middle_div
+{
+	float:left;
+	position:absolute;
+	top:79%;
+	left:23%;
+	color: #F7F7F7;
+	font-size:30px;
+	width:750px;
+	height: 800px; 
+}
+.middle_T
+{ 
+	padding: 10px 10px;
+	border-style: none;
+	border-color: #535c68;
+	border-width: 1px;
+	width: 700px;
+	height:60px;
+	font-size: 20px;
+	color: #191919;
+	margin-left:25px;
+}			 
+.side_top
+{
+	height:35px; 
+	width:40px;
+	color:#191919;
+	font-size:20px;
+	text-align: center;
+	border-right:solid;
+	border-width:1px;
+	border-color:#535c68;
+}
+.side_T
+{
+	color: #34626c;
+	width: 280px;
+	border-collapse: separate;
+	border-spacing: 0px 13px;
+	margin: 0px;
+	padding:20 20;
+}
+.side_td
+{
+	font-size: 18px;
+	height:35px; 
+	text-align: center;
+	color:#191919;
+	width:120px;
+}
+td
+{
+	background-color: #e8e8e8;
+}
+.teacher
+{
+	background-color: #495464;
+	height: 50px;
+	text-align: center;
+}
+.course
+{
+   	background-color: #495464;
+   	height: 50px;
+   	text-align: center;
+}
+.review
+{
+   	background-color: #495464;
+   	height: 50px;
+   	text-align: center;
+	width: 670px;
+	border-radius: 5px;
+}
+.Cscore
+{
+	float:left;
+	width:200px;
+	height:150px;
+	margin-left: 30px;
+	margin-top: 10px;
+}
+.Comment
+{
+	float:left;
+	width:400px;
+	height:150px;
+	margin-left: 10px;
+	margin-top:10px;
+	padding:5px;
+	font-size:18px;
+}
