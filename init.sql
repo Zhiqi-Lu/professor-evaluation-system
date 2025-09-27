@@ -56,6 +56,7 @@ CREATE TABLE review (
     Cno VARCHAR(10) NOT NULL,
     Revt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     Comment TEXT NOT NULL,
+    personality INT NOT NULL,
     difficulty INT NOT NULL,
     quality INT NOT NULL,
     state INT NOT NULL,
