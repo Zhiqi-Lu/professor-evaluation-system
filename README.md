@@ -1,4 +1,11 @@
-## 启动/重建 Docker MySQL
+## 简便启动
+```bash
+./mvnw package
+docker compose up -d --build
+```
+
+以下内容不用阅读：
+### 启动/重建Docker MySQL
 
 ### 删掉旧容器和旧数据卷
 ```bash
