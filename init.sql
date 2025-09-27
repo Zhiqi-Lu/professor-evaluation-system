@@ -14,7 +14,7 @@ CREATE TABLE student (
     Sname VARCHAR(10) NOT NULL,
     Snickname VARCHAR(20) NOT NULL,
     Spw VARCHAR(20) NOT NULL,
-    Syear YEAR NOT NULL CHECK (Syear BETWEEN 1964 AND 2020),
+    Syear YEAR NOT NULL CHECK (Syear BETWEEN 1964 AND 2025),
     Sgender VARCHAR(2),
     Smail VARCHAR(30) NOT NULL UNIQUE,
     Svalid DATE NOT NULL,
@@ -82,7 +82,7 @@ VALUES
 ('S003', 'Charlie', 'Char', 'passwd', 2020, 'M', 'charlie@example.com', '2025-12-31', NULL),
 ('S004', 'Diana', 'Di', 'passwd', 2022, 'F', 'diana@example.com', '2025-12-31', NULL),
 ('S005', 'Ethan', 'E', 'passwd', 2019, 'M', 'ethan@example.com', '2025-12-31', NULL),
-('S006', 'Fiona', 'Fi', 'passwd', 2021, 'F', 'fiona@example.com', '2025-12-31', NULL)
+('S006', 'Fiona', 'Fi', 'passwd', 2021, 'F', 'fiona@example.com', '2025-12-31', NULL);
 
 INSERT INTO administrator (Ano, Amail, Anickname, Apw, Aprivilege)
 VALUES
@@ -91,7 +91,7 @@ VALUES
 INSERT INTO course (Cno, Cname, Cterm, Ccredit, Cdept)
 VALUES
 ('C001', 'Database Systems', 3, 4, 'Computer Science'),
-('C002', 'Operating Systems', 4, 5, 'Computer Science');
+('C002', 'Operating Systems', 4, 5, 'Computer Science'),
 ('C003', 'Computer Network', 4, 5, 'Computer Science');
 
 INSERT INTO professor (Pno, Pname, Ppos, Pinfo, Pdept)
