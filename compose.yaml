@@ -7,8 +7,8 @@ services:
     container_name: my-mysql-dev
     ports:
       - "3306:3306"
-    environment:
-      MYSQL_DATABASE: professorevaluation
+#    environment:
+#      MYSQL_DATABASE: professorevaluation
 #      MYSQL_ROOT_PASSWORD: root
 #      MYSQL_USER: my_user
 #      MYSQL_PASSWORD: my_password
