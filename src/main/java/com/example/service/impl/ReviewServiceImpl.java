@@ -110,7 +110,7 @@ public class ReviewServiceImpl implements ReviewService {
 		if (rank10.size() > 10) {
 			return rank10.subList(0, 10);
 		}
-		return new ArrayList<>();
+		return rank10;
 	}
 
 	@Override
@@ -119,6 +119,6 @@ public class ReviewServiceImpl implements ReviewService {
 		if (rank10.size() > 10) {
 			return rank10.subList(0, 10);
 		}
-		return new ArrayList<>();
+		return rank10;
 	}
 }

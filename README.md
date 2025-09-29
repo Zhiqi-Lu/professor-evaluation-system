@@ -1,10 +1,10 @@
-## 简便启动
+## How to bootstrap
 ```bash
-./mvnw package
+./mvnw package # use maven to package the spring application
 docker compose up -d --build
 ```
 
-以下内容不用阅读：
+Manual operations steps:
 ### 启动/重建Docker MySQL
 
 ### 删掉旧容器和旧数据卷
