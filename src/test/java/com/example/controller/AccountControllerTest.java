@@ -1,3 +1,5 @@
+// ./mvnw clean test -Dtest=AccountControllerTest
+
 package com.example.controller;
 
 import org.junit.jupiter.api.DisplayName;
@@ -19,7 +21,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 @TestPropertySource(locations = "classpath:application-test.properties")
 @Sql(scripts = "/testdata/account_init.sql", executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
-public class AccountControllerIT {
+public class AccountControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -30,8 +32,8 @@ public class AccountControllerIT {
     @DisplayName("管理员登录成功：应返回 2")
     void testAdminLoginSuccess() throws Exception {
         String loginJson = "{"
-                + "\"Sno\":\"A001\","
-                + "\"Spw\":\"adminpass\""
+                + "\"sno\":\"A001\","
+                + "\"spw\":\"adminpass\""
                 + "}";
 
         mockMvc.perform(post(baseUrl + "/login")
@@ -46,8 +48,8 @@ public class AccountControllerIT {
     @DisplayName("管理员登录失败：应返回 0")
     void testAdminLoginFail() throws Exception {
         String loginJson = "{"
-                + "\"Sno\":\"A001\","
-                + "\"Spw\":\"wrongpass\""
+                + "\"sno\":\"A001\","
+                + "\"spw\":\"wrongpass\""
                 + "}";
 
         mockMvc.perform(post(baseUrl + "/login")
@@ -62,8 +64,8 @@ public class AccountControllerIT {
     @DisplayName("学生登录成功：应返回 1")
     void testStudentLoginSuccess() throws Exception {
         String loginJson = "{"
-                + "\"Sno\":\"S001\","
-                + "\"Spw\":\"passwd\""
+                + "\"sno\":\"S001\","
+                + "\"spw\":\"passwd\""
                 + "}";
 
         mockMvc.perform(post(baseUrl + "/login")
@@ -78,8 +80,8 @@ public class AccountControllerIT {
     @DisplayName("学生登录失败：应返回 0")
     void testStudentLoginFail() throws Exception {
         String loginJson = "{"
-                + "\"Sno\":\"S001\","
-                + "\"Spw\":\"wrongpass\""
+                + "\"sno\":\"S001\","
+                + "\"spw\":\"wrongpass\""
                 + "}";
 
         mockMvc.perform(post(baseUrl + "/login")
