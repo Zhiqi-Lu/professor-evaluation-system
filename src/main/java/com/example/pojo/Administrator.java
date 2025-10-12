@@ -23,6 +23,8 @@ public class Administrator{
         aprivilege = p;
     }
 
+    public void setApw(String apw) { this.apw = apw; }
+
     public String getAno() {
         return ano;
     }
