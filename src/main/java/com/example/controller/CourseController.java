@@ -34,7 +34,7 @@ public class CourseController {
 	
 	@RequestMapping("/querycourse")//查询课程
 	@ResponseBody
-	public Course getAdmCrs(String Cno) {//spring帮助获取参数
+	public Course getAdmCrs(@RequestParam("cno") String Cno) {//spring帮助获取参数
 		Course course =new Course();
 		course =courseService.getAdmCrs( Cno);
 		return course;
@@ -71,7 +71,7 @@ public class CourseController {
 	
 	@DeleteMapping("/deletecourse")//删除一个课程
 	@ResponseBody
-	public int deletecourse(String Cno) {
+	public int deletecourse(@RequestParam("cno") String Cno) {
 		return courseService.deletecourse(Cno);
 	}
 	
@@ -83,7 +83,8 @@ public class CourseController {
 	
 	@RequestMapping("/updatecname")//更改课程名称
 	@ResponseBody
-	public int updatecname(String Cno,String Cname) {//spring帮助获取参数
+	public int updatecname(@RequestParam("cno") String Cno,
+						   @RequestParam("cname") String Cname) {//spring帮助获取参数
 		
 		return courseService.updatecname(Cno,Cname);
 	}

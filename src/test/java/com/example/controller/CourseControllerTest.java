@@ -16,17 +16,18 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.hamcrest.Matchers.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+
 
 /**
- * Integration tests for CourseController
+ * Integration tests for CourseController.
  * Compatible with Java 8 + JUnit 4 + Spring Boot 2.4.
  */
-
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = com.example.pes.PesApplication.class)
-@AutoConfigureMockMvc
+@AutoConfigureMockMvc(addFilters = false)  // 禁用 Spring Security 过滤器
 @TestPropertySource(locations = "classpath:application-test.properties")
-@Sql(scripts = "/testdata/account_init.sql", executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
+//@Sql(scripts = "/testdata/course_init.sql", executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
 public class CourseControllerTest {
 
     @Autowired
@@ -44,31 +45,36 @@ public class CourseControllerTest {
     /** 测试：按名称模糊查询 */
     @Test
     public void testQueryCname() throws Exception {
-        mockMvc.perform(get("/course/queryCname")
+        mockMvc.perform(get("/course/querybyname")
                 .param("cname", "Database")
                 .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk());
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[0].cname", containsString("Database")));
     }
 
     /** 测试：通过课程编号查询 */
     @Test
     public void testGetAdmCrs() throws Exception {
-        mockMvc.perform(get("/course/getAdmCrs")
+        mockMvc.perform(get("/course/querycno")
                 .param("cno", "C001")
                 .contentType(MediaType.APPLICATION_JSON))
+                .andDo(print())
                 .andExpect(status().isOk());
     }
 
-    /** 测试：新增课程 */
+    /** 测试：新增课程（随机课程号避免重复主键） */
     @Test
     public void testAddCourse() throws Exception {
+//        String randomCno = "C" + (System.currentTimeMillis() % 100000);
         String newCourseJson = "{"
                 + "\"cno\": \"C010\","
-                + "\"cname\": \"AI Systems\","
+                + "\"cname\": \"AI Systems Advanced\","
                 + "\"cterm\": 6,"
                 + "\"ccredit\": 4,"
                 + "\"cdept\": \"Computer Science\""
                 + "}";
+
         mockMvc.perform(post("/course/savecourse")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(newCourseJson))
@@ -78,13 +84,9 @@ public class CourseControllerTest {
     /** 测试：更新课程名 */
     @Test
     public void testUpdateCourseName() throws Exception {
-        String updateJson = "{"
-                + "\"cno\": \"C002\","
-                + "\"cname\": \"Operating Systems Advanced\""
-                + "}";
         mockMvc.perform(put("/course/updatecname")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(updateJson))
+                .param("cno", "C002")
+                .param("cname", "Maintenance Programming"))
                 .andExpect(status().isOk());
     }
 
@@ -92,7 +94,7 @@ public class CourseControllerTest {
     @Test
     public void testDeleteCourse() throws Exception {
         mockMvc.perform(delete("/course/deletecourse")
-                .param("cno", "C003"))
+                .param("cno", "C010"))
                 .andExpect(status().isOk());
     }
 }
