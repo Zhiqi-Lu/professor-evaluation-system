@@ -42,7 +42,7 @@ CREATE TABLE course (
 
 CREATE TABLE professor (
     Pno VARCHAR(10) NOT NULL PRIMARY KEY,
-    Pname VARCHAR(10) NOT NULL,
+    Pname VARCHAR(30) NOT NULL,
     Ppos VARCHAR(10) NOT NULL,
     Pinfo TEXT,
     Pdept VARCHAR(20) NOT NULL,
