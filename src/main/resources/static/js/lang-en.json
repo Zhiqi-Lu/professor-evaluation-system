@@ -1,0 +1,16 @@
+{
+  "login": "Log In",
+  "register": "Register",
+  "post": "Post Review",
+  "slide1": "slide1 placeholder",
+  "slide2": "slide2 placeholder",
+  "slide3": "slide3 placeholder",
+  "profranking": "Professor ranking",
+  "latestreview": "Latest Review",
+  "courses": "Courses",
+  "upvotesuccess": "Upvote sucessful",
+  "downvotesuccess": "Downvote successful",
+  "reportsuccess": "Report successful",
+  "reportfail": "Report failed",
+  "reportsubmitted": "Report submitted"
+}
