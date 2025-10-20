@@ -22,10 +22,16 @@
             <div class="btm"></div>
         </div>
     </div>
+    <div id="lang-menu">
+        <select id="lang-select" onchange="changeLanguage(this.value)">
+            <option value="en">English</option>
+            <option value="zhCN">简体中文</option>
+        </select>
+    </div>
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/i18next.min.js"></script>
     <script>
-        setLanguage('en')
+        changeLanguage('en')
         let translations = {};
         var lis = document.getElementsByTagName("li");
         var btm = document.getElementsByClassName("btm")[0];
@@ -176,20 +182,33 @@
         async function loadLanguage(lang) {
             const res = await fetch(`js/lang-${lang}.json`);
             translations = await res.json();
+            localStorage.setItem("lang", lang);
         }
 
-        async function setLanguage(lang) {
-            await loadLanguage(lang);
+        function t(key) {
+            return translations[key] || key;
+        }
 
+        function updateDOMText() {
             document.querySelectorAll("[data-i18n]").forEach(el => {
                 const key = el.getAttribute("data-i18n");
                 if (translations[key]) el.innerText = translations[key];
             });
         }
 
-        function t(key) {
-            return translations[key] || key;
+        async function changeLanguage(lang) {
+            await loadLanguage(lang);
+            updateDOMText();
+            document.getElementById("lang-select").value = lang;
         }
+
+        async function initLanguage() {
+            const savedLang = localStorage.getItem("lang") || "en";
+            await loadLanguage(savedLang);
+            updateDOMText();
+            document.getElementById("lang-select").value = savedLang;
+        }
+        document.addEventListener("DOMContentLoaded", initLanguage);
 
         function sub() {
             // if($("input[type=checkbox]").val()=="")
