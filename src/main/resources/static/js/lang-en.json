@@ -12,5 +12,9 @@
   "downvotesuccess": "Downvote successful",
   "reportsuccess": "Report successful",
   "reportfail": "Report failed",
-  "reportsubmitted": "Report submitted"
+  "reportsubmitted": "Report submitted",
+  "search_placeholder": "Please enter the name of a professor or a course",
+  "course_difficulty": "Course difficulty",
+  "teaching_quality": "Teaching quality",
+  "knowledge_acquired": "Knowledge acquired"
 }

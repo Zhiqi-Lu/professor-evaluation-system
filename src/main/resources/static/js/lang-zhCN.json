@@ -12,5 +12,9 @@
   "downvotesuccess": "踩成功",
   "reportsuccess": "举报成功",
   "reportfail": "举报失败",
-  "reportsubmitted": "您的举报已提交"
+  "reportsubmitted": "您的举报已提交",
+  "search_placeholder": "请输入教师/课程名称查询",
+  "course_difficulty": "课程难度",
+  "teaching_quality": "教师素养",
+  "knowledge_acquired": "受益程度"
 }
